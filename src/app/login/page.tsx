@@ -40,7 +40,7 @@ export default function Home() {
         return;
       }
 
-      router.replace("/");
+      router.replace("/quizzDashboard");
     } catch (err) {
       console.error("[LOGIN] Error en fetch:", err);
       setError("Error de conexión. Verifica tu servidor o tu red.");

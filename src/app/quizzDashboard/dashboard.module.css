@@ -288,6 +288,10 @@
     color: #E9E6FF;
     opacity: .9;
     padding: 20px 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .error {

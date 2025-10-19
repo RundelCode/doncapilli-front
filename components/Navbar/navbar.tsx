@@ -16,7 +16,7 @@ export default function Navbar() {
       console.log('[LOGOUT] Respuesta del servidor:', data);
 
       if (res.ok) {
-        router.replace('/login'); // redirige al login
+        router.replace('/login');
       } else {
         alert(data?.message || 'Error al cerrar sesión');
       }
@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className={styles.section}>
           <p>Trivias</p>
           <a href="/quizzDashboard">Gestionar Trivias</a>
-          <a href="">Nueva Trivia</a>
+          <a href="/newTrivia">Nueva Trivia</a>
         </div>
         <div className={styles.section}>
           <p>Interacciones</p>

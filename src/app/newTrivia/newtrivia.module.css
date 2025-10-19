@@ -1,0 +1,253 @@
+.page{
+  width:100%;
+  min-height:100vh;
+  background-image:url('/images/background.png');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:24px;
+  padding:28px 0px;
+}
+
+.card{
+  width:min(560px, 100%);
+  height: 600px;
+  overflow: auto;
+  background:#1B1D2360;
+  backdrop-filter: blur(6px);
+  border:1px solid #788DD150;
+  border-radius:20px;
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.title{
+  font-size:1.8rem;
+  text-align:center;
+  color:#6446C6;
+  font-weight:800;
+  letter-spacing:.5px;
+  margin:0 0 8px 0;
+}
+
+.subtitle{
+  color:#E9E6FF;
+  opacity:.9;
+  font-weight:800;
+  text-align:center;
+  margin-top:6px;
+}
+
+.label{
+  color:#E9E6FF;
+  font-weight:700;
+  margin-top:2px;
+}
+
+.labelInline{
+  color:#E9E6FF;
+  font-weight:700;
+  margin-right:8px;
+}
+
+.input{
+  min-height:44px;
+  padding:0 14px;
+  border-radius:12px;
+  border:1px solid #788DD150;
+  background:#0F11174D;
+  color:#fff;
+  outline:none;
+}
+
+.input::placeholder{ color:#E9E6FFB0; }
+
+.answersGrid{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.answerRow{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.answerBadge{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0F111780;
+  color:#fff;
+  border:1px solid #788DD150;
+  font-weight:800;
+}
+
+.inlineControls{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:flex-start;
+  flex-wrap:wrap;
+}
+
+.selectWrap{ display:flex; align-items:center; gap:10px; }
+.select{
+  height:40px;
+  border-radius:10px;
+  border:1px solid #788DD150;
+  background:#0F11174D;
+  color:#fff;
+  padding:0 12px;
+  outline:none;
+}
+
+.primary{
+  height:40px;
+  padding:0 18px;
+  border-radius:10px;
+  border:1px solid #6446C680;
+  background:#6446C6;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .06s ease, filter .15s ease;
+}
+.primary:hover{ filter:brightness(1.07); }
+.primary:active{ transform:translateY(1px); }
+
+.primaryXL{
+  min-height:46px;
+  padding:0 22px;
+  border-radius:12px;
+  border:1px solid #6446C680;
+  background:#6446C6;
+  color:#fff;
+  font-weight:800;
+  margin-top:8px;
+  cursor:pointer;
+}
+
+.smallDanger{
+  height:28px;
+  min-width:28px;
+  padding:0 6px;
+  border-radius:8px;
+  background:#a43a4a;
+  border:1px solid #ff8da0a6;
+  color:#ffd7dc;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.danger{
+  height:40px;
+  padding:0 16px;
+  border-radius:10px;
+  background:#a43a4a;
+  border:1px solid #ff8da0a6;
+  color:#ffd7dc;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.listBlock{
+  margin-top:8px;
+  background:#0F11174D;
+  border:1px solid #788DD150;
+  border-radius:14px;
+  padding:12px;
+}
+
+.listHeader{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:6px;
+}
+
+.listTitle{
+  color:#E9E6FF;
+  opacity:.9;
+  font-weight:800;
+}
+
+.badge{
+  background:#6446C6;
+  color:#fff;
+  border-radius:999px;
+  padding:2px 10px;
+  font-size:.8rem;
+  font-weight:800;
+}
+
+.qList{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.qItem{
+  border:1px solid #788DD150;
+  border-radius:12px;
+  padding:10px;
+}
+
+.qTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:4px;
+}
+.qIndex{ color:#fff; font-weight:800; }
+.qStatement{ color:#fff; margin-bottom:6px; }
+.qAnswers{ color:#E9E6FF; opacity:.95; display:grid; gap:4px; }
+.correctLine{ margin-top:6px; color:#B7F7C0; font-weight:800; }
+
+.muted{
+  color:#E9E6FF;
+  opacity:.7;
+  font-size:.95rem;
+}
+
+.error{
+  background:#3b1217b3;
+  border:1px solid #ff8292a6;
+  color:#ffd7dc;
+  padding:10px 12px;
+  border-radius:12px;
+  margin-top:8px;
+  text-align:center;
+}
+
+.success{
+  background:#173b25b3;
+  border:1px solid #7dffb5a6;
+  color:#ccffe4;
+  padding:10px 12px;
+  border-radius:12px;
+  margin-top:8px;
+  text-align:center;
+}
+
+.blockHeader{ margin-top:10px; }
+
+.hintBox summary{
+  cursor:pointer;
+  color:#E9E6FF;
+  opacity:.85;
+  font-weight:700;
+  margin:6px 0;
+}
+.advRow{ display:flex; align-items:center; gap:10px; }
