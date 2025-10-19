@@ -1,0 +1,331 @@
+.page {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../../public/images/background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.card {
+    width: calc(500px - 40px);
+    height: auto;
+    min-height: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: #1B1D2360;
+    backdrop-filter: blur(5px);
+    border: 1px solid #788DD150;
+    border-radius: 20px;
+    gap: 16px;
+}
+
+.cardWide {
+    width: min(500px, calc(100% - 80px));
+    height: 600px;
+    min-height: 400px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: #1B1D2360;
+    backdrop-filter: blur(5px);
+    border: 1px solid #788DD150;
+    border-radius: 20px;
+    gap: 16px;
+    overflow: auto;
+}
+
+.cardWide::-webkit-scrollbar{
+    display: none;
+}
+
+/* Headings */
+.title {
+    font-size: 2rem;
+    color: #6446C6;
+    text-align: center;
+    margin: 0 0 .25rem 0;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #E9E6FF;
+    opacity: .85;
+    font-weight: 700;
+    margin-top: -4px;
+}
+
+.activeTitle {
+    color: #fff;
+    text-align: center;
+    margin-top: 6px;
+    font-weight: 800;
+}
+
+/* Subtle text */
+.muted {
+    text-align: center;
+    color: #E9E6FF;
+    opacity: .7;
+    font-size: .95rem;
+}
+
+/* Inputs + Buttons */
+.inputRow {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.input {
+    flex: 1;
+    height: 42px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid #788DD150;
+    background: #0F11174D;
+    color: #FFFFFF;
+    outline: none;
+}
+
+.input::placeholder {
+    color: #E9E6FFB0;
+}
+
+.primary, .primary2 {
+    height: 42px;
+    width: 100%;
+    padding: 0 18px;
+    border-radius: 10px;
+    border: 1px solid #6446C680;
+    background: #6446C6;
+    color: #FFFFFF;
+    font-weight: 700;
+    letter-spacing: .2px;
+    cursor: pointer;
+    transition: transform .06s ease, filter .15s ease;
+}
+
+.primary2{
+    margin-top: 20px;
+}
+
+.primary:hover, .primary2:hover {
+    filter: brightness(1.07);
+}
+
+.primary:active, .primary2:active {
+    transform: translateY(1px);
+}
+
+.secondary {
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid #6446C680;
+    background: transparent;
+    color: #E9E6FF;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+}
+
+.secondary:hover {
+    background: #6446C620;
+    color: #FFFFFF;
+}
+
+.danger {
+    margin-top: 8px;
+    min-height: 60px;
+    padding: 0 18px;
+    border-radius: 12px;
+    border: 1px solid #ff7b7bb0;
+    background: #b83a3a;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: filter .15s ease, transform .06s ease;
+}
+
+.danger:hover {
+    filter: brightness(1.05);
+}
+
+.danger:active {
+    transform: translateY(1px);
+}
+
+/* Lista de trivias inactivas */
+.listBlock {
+    margin-top: 8px;
+}
+
+.listTitle {
+    color: #E9E6FF;
+    opacity: .9;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.listItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0F11174D;
+    border: 1px solid #788DD150;
+    border-radius: 14px;
+    padding: 12px 14px;
+}
+
+.triviaTitle {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.triviaMeta {
+    color: #E9E6FF;
+    opacity: .7;
+    font-size: .9rem;
+}
+
+/* Preguntas */
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.questionCard {
+    background: #0F11174D;
+    border: 1px solid #788DD150;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.qHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.qIndex {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.badge {
+    background: #6446C6;
+    color: #FFFFFF;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: .75rem;
+}
+
+.qStatement {
+    color: #FFFFFF;
+    margin-bottom: 6px;
+}
+
+.answers {
+    color: #E9E6FF;
+}
+
+.answersLabel {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.answersList {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.answersList li {
+    margin: 2px 0;
+}
+
+.answerLine {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+
+.correct {
+    background: #329b32ce;
+}
+
+.incorrect {
+    background: transparent;
+}
+
+/* Loading & Error */
+.center {
+    text-align: center;
+    color: #E9E6FF;
+    opacity: .9;
+    padding: 20px 0;
+}
+
+.error {
+    background: #3b1217b3;
+    border: 1px solid #ff8292a6;
+    color: #ffd7dc;
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .card {
+        width: calc(650px - 80px);
+    }
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding: 24px 18px;
+        gap: 18px;
+        align-items: stretch;
+    }
+
+    .card,
+    .cardWide {
+        width: 100%;
+        padding: 22px;
+    }
+
+    .inputRow {
+        flex-direction: column;
+    }
+
+    .primary,
+    .secondary,
+    .danger {
+        width: 100%;
+    }
+}
