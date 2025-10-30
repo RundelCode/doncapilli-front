@@ -9,7 +9,7 @@ export async function POST(req: Request) {
 
     let body: any = null;
     try { body = await req.json(); } catch { }
-    const triviaId: string | undefined = body?.triviaId; // ← tu parámetro
+    const triviaId: string | undefined = body?.triviaId;
 
     if (!triviaId) {
         return NextResponse.json({ message: 'triviaId es requerido' }, { status: 400 });
@@ -19,7 +19,6 @@ export async function POST(req: Request) {
     const token = cookieStore.get('access_token')?.value;
 
     try {
-        // Traducimos al endpoint real del backend:
         const r = await fetch(`${baseUrl}/quizzes/${encodeURIComponent(triviaId)}`, {
             method: 'PATCH',
             headers: {

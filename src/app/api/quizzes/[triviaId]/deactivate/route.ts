@@ -10,13 +10,10 @@ export async function PATCH(
     const token = cookieStore.get('access_token')?.value;
     const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-    // Tomamos el id desde params con el nombre correcto
     let quizId = ctx?.params?.triviaId;
 
-    // Fallback por si falla params (defensivo)
     if (!quizId) {
         const parts = url.pathname.split('/').filter(Boolean);
-        // ['api','quizzes',':triviaId','deactivate']
         if (parts.length >= 4 && parts[0] === 'api' && parts[1] === 'quizzes') {
             quizId = parts[2];
         }
@@ -38,7 +35,6 @@ export async function PATCH(
     }
 
     try {
-        // OJO: el backend Nest usa :id (no :triviaId). Aquí sólo reenviamos el valor.
         const r = await fetch(`${baseUrl}/quizzes/${quizId}/deactivate`, {
             method: 'PATCH',
             headers: {

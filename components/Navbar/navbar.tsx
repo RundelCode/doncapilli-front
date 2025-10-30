@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className={styles.section}>
           <p>Interacciones</p>
           <a href="/activeTrivia" target='blank'>Ver Trivia Activa</a>
-          <a href="/leaderboard" target='blank'>Resultados</a>
+          <a href="/participants/active" target='blank'>Resultados</a>
         </div>
       </div>
       <button className={styles.logout} onClick={handleLogout}>

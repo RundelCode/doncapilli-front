@@ -1,13 +1,12 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
-// PUT /api/quizzes/:triviaId/active-question
-// body: { questionId: string }
+
 export async function PUT(
     req: Request,
     context: { params: Promise<{ triviaId: string }> }
 ) {
-    const { triviaId } = await context.params; // Next 15
+    const { triviaId } = await context.params;
     const { questionId } = await req.json() as { questionId: string };
 
     const cookieStore = await cookies();
@@ -44,7 +43,6 @@ export async function PUT(
             return NextResponse.json({ message: msg }, { status: r.status });
         }
 
-        // Tu servicio devuelve la pregunta actualizada (o algo similar). Normalizamos:
         return NextResponse.json({
             ok: true,
             activeQuestionId: questionId,

@@ -15,7 +15,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: 'Falta título' }, { status: 400 });
   }
 
-  // 👇👇 CORRECTO: cookies() con await
   const cookieStore = await cookies();
   const token = cookieStore.get('access_token')?.value;
 
@@ -23,7 +22,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: 'Falta token de sesión' }, { status: 401 });
   }
 
-  // 🔥 obtener el adminId desde tu backend
   let adminId: string | undefined;
   try {
     const meRes = await fetch(`${baseUrl}/admins/me`, {
@@ -52,7 +50,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: `Fallo resolviendo admin actual: ${err?.message ?? 'Error'}` }, { status: 502 });
   }
 
-  // Crear trivia
   try {
     const r = await fetch(`${baseUrl}/quizzes`, {
       method: 'POST',

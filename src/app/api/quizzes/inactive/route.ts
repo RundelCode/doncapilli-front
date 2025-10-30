@@ -1,4 +1,3 @@
-// src/app/api/quizzes/inactive/route.ts
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 

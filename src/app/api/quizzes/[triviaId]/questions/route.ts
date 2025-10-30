@@ -1,18 +1,16 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
-// GET /api/quizzes/:triviaId/questions
 export async function GET(
   _req: Request,
   context: { params: Promise<{ triviaId: string }> }
 ) {
-  const { triviaId } = await context.params; // Next 15: params es Promise
+  const { triviaId } = await context.params;
   const cookieStore = await cookies();
   const token = cookieStore.get("access_token")?.value;
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   try {
-    // 1) Lista de preguntas de ese quiz
     const r1 = await fetch(`${baseUrl}/questions/quiz/${triviaId}`, {
       headers: {
         Accept: "application/json",
@@ -28,7 +26,6 @@ export async function GET(
       return NextResponse.json({ message: msg }, { status: r1.status });
     }
 
-    // 2) Pregunta activa (puede no existir)
     const r2 = await fetch(`${baseUrl}/questions/quiz/${triviaId}/active`, {
       headers: {
         Accept: "application/json",
@@ -39,7 +36,6 @@ export async function GET(
     let active: any = null;
     try { active = raw2 ? JSON.parse(raw2) : null; } catch {}
 
-    // Normaliza al shape esperado por el frontend
     return NextResponse.json({
       questions: Array.isArray(questions) ? questions : [],
       activeQuestionId: active?.id ?? null,
