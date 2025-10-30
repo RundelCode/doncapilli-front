@@ -6,6 +6,7 @@ import styles from './dashboard.module.css';
 import Navbar from '../../../components/Navbar/navbar';
 import { fetchJson } from '../../../lib/fetchJson';
 import { ActiveTriviaPayload, Question, Trivia } from '../../../types/trivia';
+import { ClipLoader } from 'react-spinners';
 
 type ParsedAnswer = {
   label: string;
@@ -161,7 +162,7 @@ export default function GestionTriviasPage() {
   }, [questions, active?.activeQuestionId]);
 
   // ========= UI =========
-  if (loading) return <div className={styles.center}>Cargando…</div>;
+  if (loading) return <div className={styles.center}><ClipLoader></ClipLoader></div>;
   if (error) return <div className={styles.error}>⚠️ {error}</div>;
 
   return (
@@ -204,7 +205,7 @@ export default function GestionTriviasPage() {
           <h4 className={styles.activeTitle}>{active?.trivia?.title}</h4>
 
           {qLoading ? (
-            <div className={styles.center}>Cargando preguntas…</div>
+            <div className={styles.center}><ClipLoader></ClipLoader></div>
           ) : (
             <div className={styles.questions}>
               {sortedQuestions.map((q: any, idx: number) => {

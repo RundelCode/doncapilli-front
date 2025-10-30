@@ -1,3 +1,4 @@
+// src/app/api/admins/me/route.ts
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 
@@ -7,6 +8,7 @@ export async function GET() {
     return NextResponse.json({ message: 'Falta NEXT_PUBLIC_API_BASE_URL' }, { status: 500 });
   }
 
+  // ✅ Corrección: usar await cookies()
   const cookieStore = await cookies();
   const token = cookieStore.get('access_token')?.value;
 
@@ -16,7 +18,6 @@ export async function GET() {
 
   try {
     const r = await fetch(`${baseUrl}/admins/me`, {
-      method: 'GET',
       headers: {
         Accept: 'application/json',
         Authorization: `Bearer ${token}`,
@@ -25,7 +26,11 @@ export async function GET() {
 
     const raw = await r.text();
     let data: any = null;
-    try { data = raw ? JSON.parse(raw) : null; } catch {}
+    try {
+      data = raw ? JSON.parse(raw) : null;
+    } catch {
+      // si falla el parseo no crashea
+    }
 
     if (!r.ok) {
       const msg = data?.message
@@ -34,9 +39,8 @@ export async function GET() {
       return NextResponse.json({ message: msg }, { status: r.status });
     }
 
-    return NextResponse.json(data ?? {});
-  } catch (err) {
-    console.error('[api/admins/me GET]', err);
+    return NextResponse.json(data);
+  } catch {
     return NextResponse.json({ message: 'Error de conexión con el backend' }, { status: 502 });
   }
 }

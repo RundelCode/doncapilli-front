@@ -8,7 +8,6 @@ export default function Home() {
     <div className={styles.page}>
       <Navbar></Navbar>
       <div className={styles.card}>
-        Hola
       </div>
     </div>
   );
