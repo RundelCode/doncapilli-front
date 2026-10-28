@@ -36,9 +36,15 @@ export default function Navbar() {
           <a href="/newTrivia">Nueva Trivia</a>
         </div>
         <div className={styles.section}>
+          <p>Votaciones</p>
+          <a href="/pollDashboard">Gestionar Votaciones</a>
+          <a href="/newPoll">Nueva Votación</a>
+        </div>
+        <div className={styles.section}>
           <p>Interacciones</p>
           <a href="/activeTrivia" target='blank'>Ver Trivia Activa</a>
           <a href="/participants/active" target='blank'>Resultados</a>
+          <a href="/activePoll" target='blank'>Ver Votación Activa</a>
         </div>
       </div>
       <button className={styles.logout} onClick={handleLogout}>

@@ -1,7 +1,7 @@
 .navbar {
     width: 200px;
     height: auto;
-    max-height: 400px;
+    max-height: 620px;
     padding: 20px;
     display: flex;
     flex-direction: column;

@@ -1,0 +1,126 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/images/background.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 0;
+}
+
+.card {
+  width: min(560px, 100%);
+  max-height: 600px;
+  overflow: auto;
+  background: #1B1D2360;
+  backdrop-filter: blur(6px);
+  border: 1px solid #788DD150;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #6446C6;
+  font-weight: 800;
+  letter-spacing: .5px;
+  margin: 0 0 8px 0;
+}
+
+.label {
+  color: #E9E6FF;
+  font-weight: 700;
+}
+
+.input {
+  flex: 1;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid #788DD150;
+  background: #0F11174D;
+  color: #fff;
+  outline: none;
+}
+
+.input::placeholder { color: #E9E6FFB0; }
+.input:focus-visible { border-color: #6446C6; }
+
+.addRow {
+  display: flex;
+  gap: 10px;
+}
+
+.primary {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 10px;
+  border: 1px solid #6446C680;
+  background: #6446C6;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary:hover { filter: brightness(1.07); }
+
+.primaryXL {
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 12px;
+  border: 1px solid #6446C680;
+  background: #6446C6;
+  color: #fff;
+  font-weight: 800;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.primaryXL:disabled { opacity: .6; cursor: default; }
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #788DD130;
+  background: #0F111780;
+  color: #E9E6FF;
+  font-weight: 600;
+}
+
+.remove {
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid #ff829280;
+  background: transparent;
+  color: #ffd7dc;
+  cursor: pointer;
+}
+
+.remove:hover { background: #3b1217b3; }
+
+.error {
+  background: #3b1217b3;
+  border: 1px solid #ff8292a6;
+  color: #ffd7dc;
+  padding: 10px 12px;
+  border-radius: 12px;
+}

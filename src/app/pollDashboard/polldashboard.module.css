@@ -1,0 +1,200 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/images/background.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 20px;
+}
+
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listCard,
+.detailCard {
+  background: #1B1D2360;
+  backdrop-filter: blur(6px);
+  border: 1px solid #788DD150;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: calc(100vh - 56px);
+  overflow: auto;
+}
+
+.listCard { width: 300px; }
+.detailCard { width: min(680px, 100%); }
+
+.title {
+  font-size: 1.5rem;
+  color: #6446C6;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.subtitle {
+  color: #E9E6FF;
+  font-weight: 800;
+}
+
+.muted { color: #E9E6FF; opacity: .75; font-size: .9rem; }
+
+.detailHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #788DD130;
+  background: #0F111780;
+}
+
+.pollList, .pickList, .results, .totals {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pollBtn {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #788DD130;
+  background: #0F111780;
+  color: #E9E6FF;
+  cursor: pointer;
+}
+
+.pollBtn:hover { border-color: #788DD190; }
+.pollBtnActive { border-color: #6446C6; background: #6446C633; }
+.pollName { font-weight: 700; }
+
+.live {
+  align-self: flex-start;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #6446C6;
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.pickBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #788DD130;
+  background: #0B0D13;
+  color: #E9E6FF;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pickBtnOn { border-color: #6446C6; background: #6446C633; }
+
+.badge {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #0F111780;
+  border: 1px solid #788DD150;
+  color: #fff;
+  font-weight: 800;
+}
+
+.pickBtnOn .badge, .resultRow .badge { background: #6446C6; border-color: #6446C6; }
+
+.resultRow { display: flex; align-items: center; gap: 12px; }
+.resultBody { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.resultTop { display: flex; justify-content: space-between; color: #E9E6FF; font-weight: 600; }
+
+.bar { height: 8px; border-radius: 999px; background: #0B0D13; overflow: hidden; }
+.barFill { height: 100%; background: #6446C6; transition: width .3s ease; }
+
+.totals li {
+  display: flex;
+  justify-content: space-between;
+  color: #E9E6FF;
+  padding: 6px 2px;
+  border-bottom: 1px solid #788DD120;
+}
+
+.history { display: flex; flex-direction: column; gap: 8px; }
+.historyTitle { color: #E9E6FF; font-weight: 700; }
+
+.primary {
+  align-self: flex-start;
+  min-height: 42px;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: 1px solid #6446C680;
+  background: #6446C6;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.primary:hover:not(:disabled) { filter: brightness(1.07); }
+.primary:disabled { opacity: .5; cursor: default; }
+
+.danger {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #ff829280;
+  background: transparent;
+  color: #ffd7dc;
+  cursor: pointer;
+}
+
+.danger:hover:not(:disabled) { background: #3b1217b3; }
+
+.error {
+  background: #3b1217b3;
+  border: 1px solid #ff8292a6;
+  color: #ffd7dc;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.notice {
+  background: #4C359733;
+  border: 1px solid #6446C680;
+  color: #E9E6FF;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: .9rem;
+}
+
+@media (max-width: 1100px) {
+  .page { flex-direction: column; align-items: center; }
+  .listCard, .detailCard { width: min(680px, 100%); max-height: none; }
+}
